@@ -15,6 +15,7 @@ module.exports = function(app){
  
     // Auth Routes
     apiRoutes.use('/auth', authRoutes);
+
     authRoutes.post('/register', AuthenticationController.register);
     authRoutes.post('/login', requireLogin, AuthenticationController.login);
  
@@ -24,6 +25,7 @@ module.exports = function(app){
 
     // Ganadores Routes
     apiRoutes.use('/ganadores', gananadoresRoutes);
+    
     gananadoresRoutes.get('/', ganadoresController.getGanadores);
 
     // Set up routes
